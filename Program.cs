@@ -14,6 +14,76 @@ namespace csharp_day_1
     // access modifier, return type, name, parameters
     static void Main(string[] args)
     {
+      Console.Clear();
+      Shelter myShelter = new Shelter();
+      myShelter.AddPet(new Cat("Garfield", 5));
+      myShelter.AddPet(new Cat("Felix", 3));
+      myShelter.AddPet(new Cat("Mr. Snibbley", 105));
+      myShelter.AddPet(new Cat("Sylvester", 1));
+      myShelter.AddPet(new Dog("Fido"));
+      myShelter.AddPet(new Dog("Spot"));
+      myShelter.AddPet(new Dog("Clifford"));
+      PrintAnimals(myShelter);
+      // game logic loop
+      bool adopting = true;
+      while (adopting)
+      {
+
+        Console.WriteLine("\nWhat type of animal do you wish to adopt? (cat or dog)");
+        string type = Console.ReadLine().ToLower();
+        Console.WriteLine("Which one?");
+        string name = Console.ReadLine().ToLower();
+        if (type == "cat")
+        {
+          Cat c = myShelter.Cats.Find(c => c.Name.ToLower() == name);
+          if (c == null)
+          {
+            Console.WriteLine("Sorry we don't have a Cat by that name");
+          }
+          else
+          {
+            Console.WriteLine(myShelter.Adopt(c));
+            Console.WriteLine("Would you like to adopt another? (y/n)");
+            var choice = Console.ReadKey().KeyChar;
+            if (choice == 'n')
+            {
+              adopting = false;
+            }
+            else
+            {
+              Console.Clear();
+              PrintAnimals(myShelter);
+            }
+          }
+        }
+        else if (type == "dog") { }
+        else
+        {
+          Console.WriteLine("Sorry you must choose 'cat' or 'dog'");
+        }
+      }
+
+    }
+
+    private static void PrintAnimals(Shelter myShelter)
+    {
+      Console.WriteLine("Cats: ");
+      for (int i = 0; i < myShelter.Cats.Count; i++)
+      {
+        Cat c = myShelter.Cats[i];
+        Console.WriteLine(c.Name);
+      }
+      Console.WriteLine("\n");
+      Console.WriteLine("Dogs: ");
+      for (int i = 0; i < myShelter.Dogs.Count; i++)
+      {
+        Dog d = myShelter.Dogs[i];
+        Console.WriteLine(d.Name);
+      }
+    }
+
+    private static void starterCode()
+    {
       // REVIEW Console.WriteLine (cw + tab ) : console.log
       //   Console.WriteLine("Hello World!");
 
@@ -48,13 +118,13 @@ Hello World
       Console.WriteLine("Hello What is your name?");
       Console.Write("Name: ");
       string name = Console.ReadLine();
-      System.Console.WriteLine("Hello " + name);
+      Console.WriteLine("Hello " + name);
       // color
       Console.ForegroundColor = ConsoleColor.Red;
       Console.BackgroundColor = ConsoleColor.Blue;
       Console.Clear();
-      System.Console.WriteLine("It's a Me");
-      System.Console.WriteLine(@"
+      Console.WriteLine("It's a Me");
+      Console.WriteLine(@"
        ------------
      /  (_)_   _    \
   /)      (_) (_)      \
@@ -100,7 +170,7 @@ Hello World
       cats[1] = "Mr. Snibbley";
       cats[0] = null;
       // C# Alternative List
-      // List<Type> (use System.Collections.Generic)
+      // List<Type> (use Collections.Generic)
       // Must be instatiated
       // can use {} to add values at initalization
       List<String> catsList = new List<string>() { "Garfield", "Nermal" };
@@ -160,7 +230,7 @@ Hello World
       // array.length : list.count
       for (int i = 0; i < catsList.Count; i++)
       {
-        System.Console.WriteLine(catsList[i]);
+        Console.WriteLine(catsList[i]);
       }
 
 
@@ -168,9 +238,6 @@ Hello World
       // SECTION Using Classes
       Cat myCat = new Cat("Mr. Snibbley", 100);
       myCat.Name = "Capt. Jack";
-
-
-
     }
   }
 }

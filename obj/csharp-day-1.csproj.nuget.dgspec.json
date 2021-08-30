@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\source\\codeworks\\late-summer-21\\csharp-day-1\\csharp-day-1.csproj": {}
+    "C:\\source\\codeworks\\late-summer-21\\csharp-day-1\\csharp-day-1.csproj": {}
   },
   "projects": {
-    "c:\\source\\codeworks\\late-summer-21\\csharp-day-1\\csharp-day-1.csproj": {
+    "C:\\source\\codeworks\\late-summer-21\\csharp-day-1\\csharp-day-1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\source\\codeworks\\late-summer-21\\csharp-day-1\\csharp-day-1.csproj",
+        "projectUniqueName": "C:\\source\\codeworks\\late-summer-21\\csharp-day-1\\csharp-day-1.csproj",
         "projectName": "csharp-day-1",
-        "projectPath": "c:\\source\\codeworks\\late-summer-21\\csharp-day-1\\csharp-day-1.csproj",
+        "projectPath": "C:\\source\\codeworks\\late-summer-21\\csharp-day-1\\csharp-day-1.csproj",
         "packagesPath": "C:\\Users\\MarkO\\.nuget\\packages\\",
-        "outputPath": "c:\\source\\codeworks\\late-summer-21\\csharp-day-1\\obj\\",
+        "outputPath": "C:\\source\\codeworks\\late-summer-21\\csharp-day-1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MarkO\\AppData\\Roaming\\NuGet\\NuGet.Config"
